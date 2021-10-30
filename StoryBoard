@@ -1,0 +1,100 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Note
+{  
+    public:
+        // Note(){}
+        // ~Note(){}
+        string Title;
+        string Text;
+        string Tags[];  
+};
+
+class StoryBoard
+{
+    public:
+        // Note intializeNotes(int size);
+        void addNote(string newTitle, string newText, string newTags[]);
+        void deleteNote(int noteID,Note notes, int size);
+        void searchByTitle();
+        void searchByText();
+        void searchByTag();
+    private:
+
+};
+
+// Note StoryBoard::intializeNotes(int size)
+// {
+//     // Note *notes = new Note[size];
+// }
+
+void StoryBoard::addNote(int noteID,Note &notes, string newTitle, string newText, string newTags[])
+{
+    notes[noteID].Title = newTitle;
+    notes[noteID].Text = newText;
+    notes[noteID].Tags[] = newTags;
+}
+
+void StoryBoard::deleteNote(int noteID, Note &notes, int size)
+{
+    for(int i = noteID, i < size-1; i++)
+    {
+        notes[i] = notes[i+1];
+    }
+}
+
+void StoryBoard::searchByTitle(String title, int size, Note notes)
+{
+    for(int i = 0; i < size; i++)
+    {
+        if(notes[i].title == title){
+            cout << "noteID: " + i;
+            cout << "title: " + notes[i].title;
+            cout << "text: " + notes[i].text;
+            cout << "tags: " + notes[i].tags;
+        }
+    }
+}
+
+
+void StoryBoard::searchByText(String text, int size, Note notes)
+{
+    for(int i = 0; i < size; i++)
+    {
+        if(notes[i].text == text){
+            cout << "noteID: " + i;
+            cout << "title: " + notes[i].title;
+            cout << "text: " + notes[i].text;
+            cout << "tags: " + notes[i].tags;
+        }
+    }   
+}
+
+void StoryBoard::searchByTag(String tag, int size, Note notes)
+{
+    for(int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < notes[i].tags.size(); j++)
+        {
+            if(notes[i].tags[j] == tag){
+                cout << "noteID: " + i;
+                cout << "title: " + notes[i].title;
+                cout << "text: " + notes[i].text;
+                cout << "tags: " + notes[i].tags;
+            }
+        }
+    }   
+}
+
+int main()
+{
+    int storyBoardSize;
+    cout<<"Enter the size of story board";
+    cin>>storyBoardSize;
+    
+    StoryBoard SB;
+    Note notes[storyBoardSize];
+    
+}
